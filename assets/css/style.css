@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+/* Atur wrapper untuk layout agar footer tetap di bawah */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, dan Edge */
+}
+/* Banner styling */
+.banner {
+    flex: 1;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 0px;
+}
+/* Navbar styling */
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Agar elemen turun jika ruang sempit */
+}
+/* Menu */
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Menu turun jika ruang sempit */
+}
+/* Logo di halaman */
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+/* Tata Letak */
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+/* Teks dekorasi */
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+/* Animasi Pada Navbar */
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #d5ac07;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+/* Content section agar tabel dan konten lain tetap terpusat dengan ruang terbatas */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Pastikan isi tidak terbalik */
+    padding: 20px;
+    overflow-y: auto; /* Scroll jika konten terlalu panjang */
+    text-align: center;
+    color: #fff;
+}
+/* Untuk halaman-halaman yang ingin diubah margin-top */
+.content.home-content {
+    margin-top: 80px; /* Sesuaikan dengan posisi yang Anda inginkan */
+}
+
+.content.about-content {
+    margin-top: 150px; /* Mengembalikan ke posisi semula jika perlu */
+}
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+/* Table Styling */
+.content-table {
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table horizontally */
+    font-size: 0.9em;
+    min-width: 600px;
+    border-radius: 5px 5px 0 0;
+    width: 100%; /* Tabel mengambil 100% dari kontainer */
+}
+
+/* Table Header Styling */
+.content-table thead tr {
+    background-color: #0e3fd2;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Table Row Styling */
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Table Even Row Styling */
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #5a5b57;
+}
+
+/* Table Last Row Styling */
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Table Cell Styling */
+.content-table td, .content-table th {
+    padding: 12px 15px;
+    text-align: center; /* Center content in the table cells */
+}
+/* Footer Styling */
+footer {
+    background-color: #043880;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+/* Styling untuk tombol */
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 5px solid #043880;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Agar teks berada di atas */
+}
+/* Span untuk animasi efek hover */
+span {
+    background: #d5ac07;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    top: 0; /* Mulai dari atas */
+    z-index: -1; /* Di belakang tombol */
+    transition: 0.5s ease; /* Animasi lebih halus */
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
+.upload-button {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #043880; /* Warna awal biru */
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.upload-button:hover {
+    background-color: #d5ac07; /* Warna kuning saat hover */
+    color: #000; /* Warna teks berubah ke hitam */
+}
+/* Tombol cari dan Efek animasi */
+.search-section .search-button {
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #043880;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.search-section .search-button:hover {
+    background-color: #d5ac07;
+    color: #000;
+}
+/* Input Field Styling */
+input[type="text"], textarea {
+    width: 100%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px dodgerBlue;
+    background-color: #fff;
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    display: block;
+    margin: 5px 0;
+    color: #fff;
+}
+
+/* Textarea Styling */
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Form Row Styling */
+.form-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Input and Select within Form Row Styling */
+.form-row select,
+.form-row input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+.form-row select:focus,
+.form-row input[type="text"]:focus {
+    border-color: dodgerBlue;
+    box-shadow: 0 0 8px dodgerBlue;
+    background-color: #fff;
+}
+
+.form-row label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
